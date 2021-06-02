@@ -1,10 +1,12 @@
+@import "utils/variables";
+@import "utils/helpers";
+
 @import "base/reset";
 @import "base/base";
 
 @import "components/table";
 @import "components/form";
 
-@import "layouts/image-preview";
+@import "components/image-preview";
 
 
-@import "main";

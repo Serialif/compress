@@ -6,7 +6,7 @@
 }
 
 .figure {
-    border: 5px solid #222;
+    border: 5px solid $background-color-image-preview;
     height: auto;
     margin: 10px 0;
     overflow: hidden;
@@ -31,6 +31,7 @@
 
     &.thumbnail {
         width: 49%;
+
         img {
             height: 50px;
             width: auto;
@@ -44,17 +45,25 @@
     }
 
     figcaption {
-        background: #222;
-        color: #ddd;
+        background: $background-color-image-preview;
+        color: $color-image-preview;
         padding: 10px 0;
         text-align: center;
 
         &.figcaption-error {
-            background: #380000;
+            background: $background-color-image-preview-error;
+
+            .compressions-error {
+                color: $color-image-preview-error;
+            }
         }
 
         &.figcaption-success {
-            background: #003600;
+            background: $background-color-image-preview-success;
+
+            .compressions-success {
+                color: $color-image-preview-success;
+            }
         }
 
         .image-title {

@@ -1,3 +1,26 @@
+.config-error {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: calc(100% + 20px);
+  display: none;
+}
+
+.completed {
+  padding: 10px 0;
+  background: #046600;
+  color: #fff;
+  width: 100%;
+}
+
+.error {
+  color: #e30000;
+}
+
+.success {
+  color: #3dad00;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -23,6 +46,7 @@ body {
 .table-container table {
   border-collapse: collapse;
   width: 100%;
+  background: #fff;
 }
 .table-container table td, .table-container table th {
   border: 1px solid #222;
@@ -190,51 +214,26 @@ form input[type=submit] {
 }
 .figure figcaption {
   background: #222;
-  color: #ddd;
+  color: #fff;
   padding: 10px 0;
   text-align: center;
 }
 .figure figcaption.figcaption-error {
   background: #380000;
 }
+.figure figcaption.figcaption-error .compressions-error {
+  color: #ff8a8a;
+}
 .figure figcaption.figcaption-success {
   background: #003600;
+}
+.figure figcaption.figcaption-success .compressions-success {
+  color: #b2ffa2;
 }
 .figure figcaption .image-title {
   display: inline-block;
   font-weight: 600;
   text-transform: uppercase;
-}
-
-.config-error {
-  margin: 0;
-  padding: 10px;
-  font-size: 0.8rem;
-  width: calc(100% + 20px);
-  display: none;
-}
-
-.completed {
-  padding: 10px 0;
-  background: #046600;
-  color: #fff;
-  width: 100%;
-}
-
-.error {
-  color: #e30000;
-}
-
-.success {
-  color: #3dad00;
-}
-
-.compressions-error {
-  color: #ff2929;
-}
-
-.compressions-success {
-  color: #83ff3e;
 }
 
 /*# sourceMappingURL=app.css.map */
