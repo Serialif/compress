@@ -117,10 +117,7 @@ class ImageCompressor
         copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
         copy($this->compressedFile, self::UPLOADS_PATH . $this->compressedFileName);
 
-        if ($this->post['image_preview'] !== 'none') {
-            return $this->generateHtml();
-        }
-        return null;
+        return $this->generateHtml();
     }
 
     /**
@@ -141,6 +138,12 @@ class ImageCompressor
         $percentRate = $this->formatAccordingToRate($rate, $rate . '%');
 
         $imagePreview = $this->post['image_preview'];
+        if ($imagePreview === 'none') {
+            $imagePreview = 'half';
+            $imageClass = 'class="none"';
+        } else {
+            $imageClass = '';
+        }
 
         $uploadsPath = self::UPLOADS_PATH;
 
@@ -153,7 +156,7 @@ class ImageCompressor
                     Taille : <span class='danger'>$BaseFileSize</span><br>
                     <br>
                 </figcaption>
-                <img src="$uploadsPath$this->sourceFileName" alt="$this->sourceFileName">
+                <img src="$uploadsPath$this->sourceFileName" alt="$this->sourceFileName"$imageClass>
             </figure>
             <figure class="img $imagePreview">
                 <figcaption><span class="image-title">Image compréssée</span><br>
@@ -161,7 +164,7 @@ class ImageCompressor
                     Taille : $compressedFileSize<br>
                     Compression : $percentRate
                 </figcaption>
-                <img src="$uploadsPath$this->compressedFileName" alt="$this->compressedFileName">
+                <img src="$uploadsPath$this->compressedFileName" alt="$this->compressedFileName"$imageClass>
             </figure>
             </div>
             HTML;
