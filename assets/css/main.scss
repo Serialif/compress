@@ -1,0 +1,32 @@
+
+
+.config-error {
+    margin: 0;
+    padding: 10px;
+    font-size: .8rem;
+    width: calc(100% + 20px);
+    display: none;
+}
+
+.completed {
+    padding: 10px 0;
+    background: #046600;
+    color: #fff;
+    width: 100%;
+}
+
+.error {
+    color: #e30000;
+}
+
+.success {
+    color: #3dad00;
+}
+
+.compressions-error {
+    color: #ff2929;
+}
+
+.compressions-success {
+    color: #83ff3e;
+}

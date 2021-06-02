@@ -1,0 +1,66 @@
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.figure {
+    border: 5px solid #222;
+    height: auto;
+    margin: 10px 0;
+    overflow: hidden;
+    padding: 0;
+
+    &.half {
+        width: 49%;
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+    img {
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        display: block;
+        margin: auto;
+    }
+
+    &.thumbnail {
+        width: 49%;
+        img {
+            height: 50px;
+            width: auto;
+        }
+    }
+
+    &.none {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    figcaption {
+        background: #222;
+        color: #ddd;
+        padding: 10px 0;
+        text-align: center;
+
+        &.figcaption-error {
+            background: #380000;
+        }
+
+        &.figcaption-success {
+            background: #003600;
+        }
+
+        .image-title {
+            display: inline-block;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+}

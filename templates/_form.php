@@ -46,7 +46,7 @@ if (isset($_POST['image_preview'])) {
         </div>
         <div class="only-compressed">
             <div class="only-compressed-input"><input type="checkbox" name="only-compressed" id="only-compressed"></div>
-            <div class="only-compressed-label"><label for="only-compressed">Ne garder que les images plus petites</label></div>
+            <div class="only-compressed-label"><label for="only-compressed">Ne garder que les images plus petites que celles d'origine</label></div>
         </div>
     </div>
     <div>

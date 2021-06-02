@@ -2,7 +2,7 @@
 
 ?>
 
-<div class="table">
+<div class="table-container">
     <table>
         <thead>
             <tr>
@@ -26,7 +26,7 @@
                 <td id="gd_extension" data-value="<?= extension_loaded('gd') ? 'y' : 'n' ?>">
                     <?= extension_loaded('gd')
                         ? '<span class="success">Activée</span>'
-                        : '<span class="danger">Désactivée</span>' ?></td>
+                        : '<span class="error">Désactivée</span>' ?></td>
             </tr>
             <tr>
                 <td>file_uploads<sup>***</sup></td>
@@ -34,7 +34,7 @@
                 <td id="file_uploads" data-value="<?= ini_get('file_uploads') ? 'y' : 'n' ?>">
                     <?= ini_get('file_uploads')
                         ? '<span class="notranslate success">On</span>'
-                        : '<span class="notranslate danger">Off</span>' ?></td>
+                        : '<span class="notranslate error">Off</span>' ?></td>
             </tr>
             <tr>
                 <td>max_file_uploads</td>

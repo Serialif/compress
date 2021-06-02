@@ -1,282 +1,240 @@
-body {
-    font-family: sans-serif;
-    /*font-size: 14px;*/
-    margin: 0;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    align-items: center;
-    background: rgba(76, 97, 170, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  font-family: sans-serif;
+  margin: 0;
+  align-items: center;
+  background: rgba(76, 97, 170, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-.error {
-    padding: 10px 0;
-    background: #e30000;
-    color: #fff;
-    width: 100%;
+.table-container {
+  margin: 20px;
 }
-
-.config-error {
-    margin: 0;
-    padding: 10px;
-    font-size: .8rem;
-    width: calc(100% + 20px);
-    /*transform: translateX(-20px);*/
-    display: none;
+.table-container table {
+  border-collapse: collapse;
+  width: 100%;
 }
-
-.completed {
-    padding: 10px 0;
-    background: #046600;
-    color: #fff;
-    width: 100%;
+.table-container table td, .table-container table th {
+  border: 1px solid #222;
+  padding: 5px 10px;
 }
-
-.danger {
-    color: #e30000;
+.table-container table tr:first-child th:first-child {
+  background: #222;
+  color: #fff;
 }
-
-.success {
-    color: #3dad00;
+.table-container table td:nth-of-type(2) {
+  text-align: left;
 }
-
-.compressions-danger {
-    color: #ff2929;
-}
-
-.compressions-success {
-    color: #83ff3e;
-}
-
-.table {
-    margin: 20px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #222;
-    padding: 5px 10px;
-}
-
-tr:first-child th:first-child {
-    background: #222;
-    color: #fff;
-}
-
-td:nth-of-type(2) {
-    text-align: left;
-}
-
-
-.table p {
-    color: #888;
-    font-style: italic;
-    text-align: left;
-    margin: 4px;
+.table-container p {
+  color: #888;
+  font-style: italic;
+  text-align: left;
+  margin: 4px;
 }
 
 form {
-    align-items: center;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 2px 2px 8px #00000044;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-    width: 50%;
-    padding: 0 20px;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px #00000044;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  width: 50%;
+  padding: 0 20px;
 }
-
 form > div {
-    padding: 20px 0;
-    text-align: center;
-    width: 90%;
+  padding: 20px 0;
+  text-align: center;
+  width: 90%;
+}
+form label,
+form .label {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+form input {
+  border: 1px solid #00000022;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+form input[type=text] {
+  cursor: auto;
+  padding: 10px 10px;
+  width: calc(100% - 20px);
+}
+form .range {
+  border: 1px solid #00000022;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+form input[type=range] {
+  width: 100%;
+}
+form form div .help {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: calc(100% - 20px);
+}
+form .quality-info {
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  margin-top: -10px;
+  padding-top: 5px;
+  width: 100%;
+}
+form .quality-info .min {
+  text-align: left;
+}
+form .quality-info .max {
+  text-align: right;
+}
+form .only-compressed {
+  display: flex;
+  padding-top: 10px;
+}
+form .only-compressed .only-compressed-input {
+  width: 30px;
+}
+form .only-compressed .only-compressed-label label {
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+}
+form input[type=file] {
+  padding: 10px 10px;
+  width: calc(100% - 20px);
+}
+form .preview {
+  border: 1px solid #00000022;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
+}
+form .preview > div {
+  display: flex;
+  justify-content: flex-start;
+}
+form .preview .radio {
+  width: 30px;
+  cursor: pointer;
+}
+form .preview .radio input {
+  width: 20px;
+}
+form .preview label {
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+}
+form input[type=submit] {
+  font-weight: 600;
+  padding: 10px;
 }
 
-label,
-.label {
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
-input {
-    border: 1px solid #00000022;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+.figure {
+  border: 5px solid #222;
+  height: auto;
+  margin: 10px 0;
+  overflow: hidden;
+  padding: 0;
+}
+.figure.half {
+  width: 49%;
+}
+.figure.full {
+  width: 100%;
+}
+.figure img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+.figure.thumbnail {
+  width: 49%;
+}
+.figure.thumbnail img {
+  height: 50px;
+  width: auto;
+}
+.figure.none {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.figure figcaption {
+  background: #222;
+  color: #ddd;
+  padding: 10px 0;
+  text-align: center;
+}
+.figure figcaption.figcaption-error {
+  background: #380000;
+}
+.figure figcaption.figcaption-success {
+  background: #003600;
+}
+.figure figcaption .image-title {
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-input[type=text] {
-    cursor: auto;
-    padding: 10px 10px;
-    width: calc(100% - 20px);
+.config-error {
+  margin: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  width: calc(100% + 20px);
+  display: none;
 }
 
-.range {
-    border: 1px solid #00000022;
-    border-radius: 5px;
-    padding: 10px;
-    width: calc(100% - 20px);
+.completed {
+  padding: 10px 0;
+  background: #046600;
+  color: #fff;
+  width: 100%;
 }
 
-input[type=range] {
-    width: 100%;
+.error {
+  color: #e30000;
 }
 
-form div .help {
-    margin: 0;
-    padding: 10px;
-    font-size: .8rem;
-    width: calc(100% - 20px);
+.success {
+  color: #3dad00;
 }
 
-.quality-info {
-    display: flex;
-    font-size: .8rem;
-    justify-content: space-between;
-    margin-top: -10px;
-    padding-top: 5px;
-    width: 100%;
+.compressions-error {
+  color: #ff2929;
 }
 
-.min {
-    text-align: left;
+.compressions-success {
+  color: #83ff3e;
 }
 
-.max {
-    text-align: right
-}
-
-.only-compressed {
-    display: flex;
-    padding-top: 10px;
-}
-
-.only-compressed .only-compressed-input {
-    width: 30px;
-}
-
-.only-compressed .only-compressed-label label{
-    font-weight: 400;
-    font-size: 14px;
-}
-
-input[type=file] {
-    padding: 10px 10px;
-    width: calc(100% - 20px);
-}
-
-
-.preview {
-    border: 1px solid #00000022;
-    border-radius: 5px;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.preview > div {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.preview .radio {
-    width: 30px;
-    cursor: pointer;
-}
-
-.preview input {
-    width: 20px;
-}
-
-.preview label {
-    font-weight: 400;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-
-input[type=submit] {
-    background: #0e4c00dd;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px;
-}
-
-input[type=submit]:hover {
-    background: #0e4c00ff;
-}
-
-.imgs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
-.img {
-    border: 5px solid #222;
-    height: auto;
-    margin: 10px 0;
-    overflow: hidden;
-    padding: 0;
-}
-
-.half,
-.thumbnail {
-    width: 49%;
-}
-
-.full {
-    width: 100%;
-}
-
-.none {
-    display: none;
-    width: 0;
-    height: 0;
-}
-
-.img figcaption {
-    background: #222;
-    color: #ddd;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.img .figcaption-danger {
-    background: #380000;
-}
-
-.img .figcaption-success {
-    background: #003600;
-}
-
-.img .image-title {
-    display: inline-block;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-img {
-    height: auto;
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    display: block;
-    margin: auto;
-}
-
-.thumbnail img {
-    height: 50px;
-    width: auto;
-}
+/*# sourceMappingURL=app.css.map */

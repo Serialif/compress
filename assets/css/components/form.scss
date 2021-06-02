@@ -1,0 +1,130 @@
+form {
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px #00000044;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    width: 50%;
+    padding: 0 20px;
+
+    > div {
+        padding: 20px 0;
+        text-align: center;
+        width: 90%;
+    }
+
+    label,
+    .label {
+        display: inline-block;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    input {
+        border: 1px solid #00000022;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    input[type=text] {
+        cursor: auto;
+        padding: 10px 10px;
+        width: calc(100% - 20px);
+    }
+
+    .range {
+        border: 1px solid #00000022;
+        border-radius: 5px;
+        padding: 10px;
+        width: calc(100% - 20px);
+    }
+
+    input[type=range] {
+        width: 100%;
+    }
+
+    form div .help {
+        margin: 0;
+        padding: 10px;
+        font-size: .8rem;
+        width: calc(100% - 20px);
+    }
+
+    .quality-info {
+        display: flex;
+        font-size: .8rem;
+        justify-content: space-between;
+        margin-top: -10px;
+        padding-top: 5px;
+        width: 100%;
+
+        .min {
+            text-align: left;
+        }
+
+        .max {
+            text-align: right
+        }
+    }
+
+
+    .only-compressed {
+        display: flex;
+        padding-top: 10px;
+
+        .only-compressed-input {
+            width: 30px;
+        }
+
+        .only-compressed-label label {
+            font-weight: 400;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+
+
+    input[type=file] {
+        padding: 10px 10px;
+        width: calc(100% - 20px);
+    }
+
+
+    .preview {
+        border: 1px solid #00000022;
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px 0;
+
+        > div {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .radio {
+            width: 30px;
+            cursor: pointer;
+
+            input {
+                width: 20px;
+            }
+        }
+
+        label {
+            font-weight: 400;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+
+    input[type=submit] {
+        font-weight: 600;
+        padding: 10px;
+    }
+
+}
+

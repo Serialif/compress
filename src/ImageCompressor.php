@@ -82,7 +82,7 @@ class ImageCompressor
             } else if ($fileType === "image/jpeg" || $fileType === "image/webp" || $fileType === "image/png") {
                 $html .= $this->createImage();
             } else {
-                $html .= '<span class="danger">ERREUR : Format d\'image incorrect, les formats supportés '
+                $html .= '<span class="error">ERREUR : Format d\'image incorrect, les formats supportés '
                     . 'sont PNG, JPG et WEBP</span>';
             }
         }
@@ -114,15 +114,11 @@ class ImageCompressor
             imagealphablending($image, false);
             imagesavealpha($image, true);
             imagepng($image, $this->compressedFile, $pngQuality, PNG_ALL_FILTERS);
-//            imagejpeg($image, $this->compressedFile, $this->quality);
         }
 
         $compressedWeight = filesize($this->compressedFile);
 
-//        var_dump($onlyCompressed, $sourceWeight, $compressedWeight);
-//        exit();
-
-        if ($this->post['only-compressed'] === 'on') {
+        if (!empty($this->post['only-compressed'])) {
             if ($compressedWeight < $sourceWeight) {
                 copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
                 copy($this->compressedFile, self::UPLOADS_PATH . $this->compressedFileName);
@@ -168,20 +164,20 @@ class ImageCompressor
 
         $uploadsPath = self::UPLOADS_PATH;
 
-        $figcaptionClass = $rate < 1 ? 'figcaption-danger' : 'figcaption-success';
+        $figcaptionClass = $rate < 1 ? 'figcaption-error' : 'figcaption-success';
 
         return <<<HTML
-            <div class="imgs">
-            <figure class="img $imagePreview">
+            <div class="image-preview">
+            <figure class="figure $imagePreview">
                 <figcaption>
                     <span class="image-title">Image originale</span><br>
                     $this->sourceFileName<br>
-                    Taille : <span class='danger'>$BaseFileSize</span><br>
+                    Taille : <span class='error'>$BaseFileSize</span><br>
                     <br>
                 </figcaption>
                 <img src="$uploadsPath$this->sourceFileName" alt="$this->sourceFileName"$imageClass>
             </figure>
-            <figure class="img $imagePreview">
+            <figure class="figure $imagePreview">
                 <figcaption class="$figcaptionClass">
                     <span class="image-title">Image compréssée</span><br>
                     $this->compressedFileName<br>
@@ -256,7 +252,7 @@ class ImageCompressor
     private function formatAccordingToRate(string $rate, string $html): string
     {
         return $rate < 1
-            ? "<span class='compressions-danger'>$html</span>"
+            ? "<span class='compressions-error'>$html</span>"
             : "<span class='compressions-success'>$html</span>";
     }
 

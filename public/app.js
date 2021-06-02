@@ -62,9 +62,17 @@ window.addEventListener('load', () => {
 
         if (valid) {
             submitButton.disabled = false
-            submitButton.style.background = '#0e4c00dd'
+            submitButton.style.background = 'rgba(14,76,0,0.87)'
             submitButton.style.color = '#fff'
             submitButton.style.cursor = 'pointer'
+
+            submitButton.addEventListener('mouseover', () => {
+                submitButton.style.background = 'rgba(12,49,0,0.87)'
+            })
+
+            submitButton.addEventListener('mouseout', () => {
+                submitButton.style.background = 'rgba(14,76,0,0.87)'
+            })
         }
 
         document.getElementById('completed').style.display = 'none'
