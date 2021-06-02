@@ -45,8 +45,10 @@ You can choose the quality of the compressed images. The lower it is, the lighte
 Depending on the compression of the selected images, the new compression will not have the same results.
 
 The average quality which does not change the output size of the images is 75%, which is why, by default, the quality is 50%, so that there is compression without too much loss of quality.
+
+You can also choose to keep only the images smaller than the original ones
 ### Preview
-You can choose to preview the selected and compressed images to see the quality loss.
+You can choose to preview the selected and compressed images to see the quality loss or thumbnails.
 
 The side-by-side preview makes it easier to compare vertical images, and the preview one above the other is more for horizontal images.
 
