@@ -29,7 +29,7 @@ body {
     display: none;
 }
 
-.completed{
+.completed {
     padding: 10px 0;
     background: #046600;
     color: #fff;
@@ -42,6 +42,14 @@ body {
 
 .success {
     color: #3dad00;
+}
+
+.compressions-danger {
+    color: #ff2929;
+}
+
+.compressions-success {
+    color: #83ff3e;
 }
 
 .table {
@@ -197,7 +205,7 @@ input[type=submit]:hover {
 .imgs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -206,9 +214,11 @@ input[type=submit]:hover {
     height: auto;
     margin: 10px 0;
     overflow: hidden;
+    padding: 0;
 }
 
-.half {
+.half,
+.thumbnail {
     width: 49%;
 }
 
@@ -216,14 +226,10 @@ input[type=submit]:hover {
     width: 100%;
 }
 
-.none{
+.none {
     display: none;
     width: 0;
     height: 0;
-}
-
-.img:first-child {
-    border: 5px solid #222;
 }
 
 .img figcaption {
@@ -231,6 +237,14 @@ input[type=submit]:hover {
     color: #ddd;
     padding: 10px 0;
     text-align: center;
+}
+
+.img .figcaption-danger{
+    background: #380000;
+}
+
+.img .figcaption-success{
+    background: #003600;
 }
 
 .img .image-title {
@@ -244,5 +258,11 @@ img {
     max-height: 100%;
     max-width: 100%;
     width: auto;
+    display: block;
+    margin: auto;
 }
 
+.thumbnail img {
+    height: 50px;
+    width: auto;
+}

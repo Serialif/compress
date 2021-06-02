@@ -5,10 +5,12 @@ if (isset($_POST['image_preview'])) {
     $halfChecked = $_POST['image_preview'] === 'half' ? 'checked' : '';
     $fullChecked = $_POST['image_preview'] === 'full' ? 'checked' : '';
     $noneChecked = $_POST['image_preview'] === 'none' ? 'checked' : '';
+    $thumbnailChecked = $_POST['image_preview'] === 'thumbnail' ? 'checked' : '';
 } else {
     $halfChecked = 'checked';
     $fullChecked = '';
     $noneChecked = '';
+    $thumbnailChecked = '';
 }
 
 ?>
@@ -51,6 +53,11 @@ if (isset($_POST['image_preview'])) {
                 <div class="radio"><input type="radio" name="image_preview" id="image_preview_none"
                                           value="none" <?= $noneChecked ?>></div>
                 <div><label for="image_preview_none">Pas de prévisualisation</label></div>
+            </div>
+            <div>
+                <div class="radio"><input type="radio" name="image_preview" id="image_preview_thumbnail"
+                                          value="thumbnail" <?= $thumbnailChecked ?>></div>
+                <div><label for="image_preview_thumbnail">Miniature</label></div>
             </div>
             <div>
                 <div class="radio"><input type="radio" name="image_preview" id="image_preview_half"

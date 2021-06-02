@@ -112,6 +112,7 @@ class ImageCompressor
             imagealphablending($image, false);
             imagesavealpha($image, true);
             imagepng($image, $this->compressedFile, $pngQuality, PNG_ALL_FILTERS);
+//            imagejpeg($image, $this->compressedFile, $this->quality);
         }
 
         copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
@@ -147,6 +148,8 @@ class ImageCompressor
 
         $uploadsPath = self::UPLOADS_PATH;
 
+        $figcaptionClass = $rate < 1 ? 'figcaption-danger' : 'figcaption-success';
+
         return <<<HTML
             <div class="imgs">
             <figure class="img $imagePreview">
@@ -159,7 +162,8 @@ class ImageCompressor
                 <img src="$uploadsPath$this->sourceFileName" alt="$this->sourceFileName"$imageClass>
             </figure>
             <figure class="img $imagePreview">
-                <figcaption><span class="image-title">Image compréssée</span><br>
+                <figcaption class="$figcaptionClass">
+                    <span class="image-title">Image compréssée</span><br>
                     $this->compressedFileName<br>
                     Taille : $compressedFileSize<br>
                     Compression : $percentRate
@@ -232,8 +236,8 @@ class ImageCompressor
     private function formatAccordingToRate(string $rate, string $html): string
     {
         return $rate < 1
-            ? "<span class='danger'>$html</span>"
-            : "<span class='success'>$html</span>";
+            ? "<span class='compressions-danger'>$html</span>"
+            : "<span class='compressions-success'>$html</span>";
     }
 
     /**
