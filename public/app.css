@@ -157,6 +157,20 @@ form div .help {
     text-align: right
 }
 
+.only-compressed {
+    display: flex;
+    padding-top: 10px;
+}
+
+.only-compressed .only-compressed-input {
+    width: 30px;
+}
+
+.only-compressed .only-compressed-label label{
+    font-weight: 400;
+    font-size: 14px;
+}
+
 input[type=file] {
     padding: 10px 10px;
     width: calc(100% - 20px);
@@ -239,11 +253,11 @@ input[type=submit]:hover {
     text-align: center;
 }
 
-.img .figcaption-danger{
+.img .figcaption-danger {
     background: #380000;
 }
 
-.img .figcaption-success{
+.img .figcaption-success {
     background: #003600;
 }
 

@@ -100,6 +100,8 @@ class ImageCompressor
 
         $info = getimagesize($this->sourceFile);
 
+        $sourceWeight = filesize($this->sourceFile);
+
         if ($info['mime'] === 'image/jpeg') {
             $image = imagecreatefromjpeg($this->sourceFile);
             imagejpeg($image, $this->compressedFile, $this->quality);
@@ -115,10 +117,28 @@ class ImageCompressor
 //            imagejpeg($image, $this->compressedFile, $this->quality);
         }
 
-        copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
-        copy($this->compressedFile, self::UPLOADS_PATH . $this->compressedFileName);
+        $compressedWeight = filesize($this->compressedFile);
 
-        return $this->generateHtml();
+//        var_dump($onlyCompressed, $sourceWeight, $compressedWeight);
+//        exit();
+
+        if ($this->post['only-compressed'] === 'on') {
+            if ($compressedWeight < $sourceWeight) {
+                copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
+                copy($this->compressedFile, self::UPLOADS_PATH . $this->compressedFileName);
+
+                return $this->generateHtml();
+            } else {
+                unlink($this->compressedFile);
+                return null;
+            }
+        } else {
+            copy($this->sourceFile, self::UPLOADS_PATH . $this->sourceFileName);
+            copy($this->compressedFile, self::UPLOADS_PATH . $this->compressedFileName);
+
+            return $this->generateHtml();
+        }
+
     }
 
     /**
